@@ -144,11 +144,15 @@ private fun ActionButton(
 ) {
     IvyButton(
 <<<<<<< HEAD
+<<<<<<< HEAD
         modifier = Modifier
             .size(52.dp)
             .semantics {
                 contentDescription = "Add new transaction"
             },
+=======
+        modifier = Modifier.size(52.dp).testTag("Hello"),
+>>>>>>> parent of 2a3f657 (Initial test setup for course)
 =======
         modifier = Modifier.size(52.dp).testTag("Hello"),
 >>>>>>> parent of 2a3f657 (Initial test setup for course)
