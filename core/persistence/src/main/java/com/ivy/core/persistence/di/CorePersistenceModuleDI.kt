@@ -2,7 +2,6 @@ package com.ivy.core.persistence.di
 
 import android.content.Context
 import com.ivy.core.persistence.IvyWalletCoreDb
-import com.ivy.core.persistence.algorithm.accountcache.AccountCacheDao
 import com.ivy.core.persistence.algorithm.calc.RatesDao
 import com.ivy.core.persistence.dao.AttachmentDao
 import com.ivy.core.persistence.dao.account.AccountDao
@@ -34,10 +33,6 @@ object CorePersistenceModuleDI {
     @Provides
     @Singleton
     fun provideAccountDao(db: IvyWalletCoreDb): AccountDao = db.accountDao()
-
-    @Provides
-    @Singleton
-    fun provideAccountCacheDao(db: IvyWalletCoreDb): AccountCacheDao = db.accountCacheDao()
 
     @Provides
     @Singleton

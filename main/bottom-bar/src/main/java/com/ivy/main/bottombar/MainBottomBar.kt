@@ -143,11 +143,15 @@ private fun ActionButton(
     onClick: () -> Unit
 ) {
     IvyButton(
+<<<<<<< HEAD
         modifier = Modifier
             .size(52.dp)
             .semantics {
                 contentDescription = "Add new transaction"
             },
+=======
+        modifier = Modifier.size(52.dp).testTag("Hello"),
+>>>>>>> parent of 2a3f657 (Initial test setup for course)
 //        modifier = Modifier.pointerInput(Unit) {
 //            detectDragGestures(
 //                onDragCancel = {

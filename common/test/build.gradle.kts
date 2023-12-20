@@ -12,12 +12,11 @@ plugins {
     id("de.mannodermaus.android-junit5") version "1.9.3.0"
 }
 
-apply<com.ivy.buildsrc.IvyTestPlugin>()
+apply<com.ivy.buildsrc.IvyPlugin>()
 
 dependencies {
     Hilt()
     implementation(project(":common:main"))
-    implementation(project(":core:domain"))
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${com.ivy.buildsrc.Versions.junitJupiter}")
     Testing(
         // Prevent circular dependency

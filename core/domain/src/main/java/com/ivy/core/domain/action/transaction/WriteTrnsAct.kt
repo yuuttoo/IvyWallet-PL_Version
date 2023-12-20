@@ -14,7 +14,6 @@ import com.ivy.core.domain.pure.mapping.entity.mapToTrnTagEntity
 import com.ivy.core.domain.pure.transaction.validateTransaction
 import com.ivy.core.domain.pure.util.beautify
 import com.ivy.core.persistence.IvyWalletCoreDb
-import com.ivy.core.persistence.algorithm.accountcache.AccountCacheDao
 import com.ivy.core.persistence.dao.trn.SaveTrnData
 import com.ivy.core.persistence.dao.trn.TransactionDao
 import com.ivy.core.persistence.entity.trn.TrnMetadataEntity
@@ -50,7 +49,7 @@ class WriteTrnsAct @Inject constructor(
     private val trnsSignal: TrnsSignal,
     private val timeProvider: TimeProvider,
     private val invalidateAccCacheAct: InvalidateAccCacheAct,
-    private val accountCacheDao: AccountCacheDao,
+    private val db: IvyWalletCoreDb,
 ) : Action<WriteTrnsAct.Input, Unit>() {
 
     sealed interface Input {
@@ -200,7 +199,7 @@ class WriteTrnsAct @Inject constructor(
         )
 
         // Invalidate all account's cache
-        accountCacheDao.deleteAll()
+        db.accountCacheDao().deleteAll()
     }
     // endregion
 

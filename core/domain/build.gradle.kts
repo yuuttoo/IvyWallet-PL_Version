@@ -1,5 +1,4 @@
 import com.ivy.buildsrc.ComposeTesting
-import com.ivy.buildsrc.Coroutines
 import com.ivy.buildsrc.FunctionalProgramming
 import com.ivy.buildsrc.Hilt
 import com.ivy.buildsrc.Lifecycle
@@ -24,7 +23,6 @@ dependencies {
     Lifecycle(api = false)
     ComposeTesting(api = false) // for IdlingResource
     Testing()
-    Coroutines(api = false)
 }
 android {
     namespace = "com.ivy.core.domain"
